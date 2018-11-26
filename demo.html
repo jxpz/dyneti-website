@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>DyScan - Request a Demo </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/grayscale.css" rel="stylesheet">
+    <meta name="”keywords”" content="dyscan, dyneti, dyneti technologies, card scanning, credit card scanning, card scan, credit card scan, payment scan, payment scanning, payment card scan, payment card scanning, fraud, user dropoff, user friction, checkout friction, signup friction, conversion, security, checkout conversion, signup conversion, card.io, cardio, account takeover, account takeover fraud, payments fraud, stolen credit card fraud, payments, checkout flow, third-party checkout, third party checkout, checkout vendor, kyc, compliance">
+
+     <!-- Social meta tags -->
+    <meta property="og:title" content="DyScan - Request a Demo">
+    <meta property="og:description" content="A card scanner SDK to prevent fraud.">
+    <meta property="og:image" content="img/social-cover.png">
+    <meta name="twitter:card" content="img/social-cover.png">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon2.png">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+       <a class="navbar-brand js-scroll-trigger" href="index.html"><img src="img/Logo-inverted.svg" style="width:8em; "></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="mailto:support@dyneti.com">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="demo.html">Demo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="pricing.html">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="resources.html">Resources</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="contact.html">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="contact.html">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container" style="padding-top: 7em">
+      	<div class="row">
+      		<div class="mx-auto col-md-6 col-md-offset-3">
+        <!--<div class="mx-auto text-center">-->
+	    <!--    <h2>Schedule a walkthrough</h2>-->
+         <div class="card rounded-0">
+                    <div class="card-header">
+                       <div class="mx-auto text-center" style="padding-top:1em; padding-bottom:1em;"><h3>Get a personalized DyScan demo</h3></div> 
+                    </div>
+	        <div class="form-group" style="padding-top: 2em; padding-left:2em; padding-right: 2em;">
+		        <label class="control-label">Full Name</label>
+						<input id="demo-name" class="form-control" autofocus onkeypress="updateFormState()" onkeyup="updateFormState()">
+					</div>
+					<div class="form-group" style="padding-top: 1em; padding-left:2em; padding-right: 2em;">
+						<label class="control-label">Email</label>
+						<input id="demo-email" class="form-control" type="email" onkeypress="updateFormState()" onkeyup="updateFormState()">
+					</div>
+					<div class="form-group" style="padding-top: 1em; padding-left:2em; padding-right: 2em; padding-bottom: 1em;">
+						<label class="control-label">Company/Website</label>
+						<input id="demo-company" class="form-control" onkeydown="updateFormState()" onkeyup="updateFormState()">
+					</div>
+					<div class="text-center">
+						<input id="demo-submit" type="submit" class="btn btn-card-cta" value="Request Demo" style="margin-left:0px; margin-bottom: 2em">
+					</div>
+				</form>
+			</div>
+		</div>
+        </div>
+         </div>
+     </div>
+ </header>
+
+	<!-- Calendly link widget begin -->
+	<link href="https://calendly.com/assets/external/widget.css" rel="stylesheet">
+	<script src="https://calendly.com/assets/external/widget.js" type="text/javascript"></script>
+	<!-- Calendly link widget end -->
+	<script>
+		function getFormProps() {
+			return {
+				name: document.getElementById('demo-name').value,
+				email: document.getElementById('demo-name').value,
+				company: document.getElementById('demo-company').value
+			};
+		}
+
+		function updateFormState() {
+			var props = getFormProps();
+			if(props.name && props.email && props.company) {
+				document.getElementById('demo-submit').removeAttribute('disabled');
+			} else {
+				document.getElementById('demo-submit').setAttribute('disabled', true);
+			}
+		}
+
+		function requestDemo() {
+			var props = getFormProps();
+			if(props.name && props.email && props.company) {
+				// TODO: submit the form anyway in case they don't schedule the demo
+				Calendly.showPopupWidget(
+					'https://calendly.com/dyneti' + 
+					'first_name=' + props.name.split(' ')[0] + 
+					'&last_name=' + (props.name.split(' ')[1] || '') + 
+					'&email=' + props.email
+				);
+				fbq('track', 'Lead', {
+					content_name: 'demo'
+				})
+			}
+			return false;
+		}
+
+		updateFormState();
+	</script>
+</body>
+
+  </body>
+</html>
